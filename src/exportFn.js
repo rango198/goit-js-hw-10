@@ -16,21 +16,21 @@ export function replaceElement(element) {
 }
 
 
-export function populateBreeds() {
-  fetchBreeds()
-    .then(data => {
-      data.forEach(element => {
-        arrBreedsId.push({ text: element.name, value: element.id });
-      });
-      new SlimSelect({
-        select: selector,
-        data: arrBreedsId,
-      });
-    })
-    .catch(onFetchError)
-    .finally(() => {
-      hideElement(loader);
-      hideElement(error);
-      hideElement(divCatInfo);
-    });
-}
+// export function populateBreeds() {
+//   fetchBreeds()
+//     .then(data => {
+//       data.forEach(element => {
+//         arrBreedsId.push({ text: element.name, value: element.id });
+//       });
+//       new SlimSelect({
+//         select: selector,
+//         data: arrBreedsId,
+//       });
+//     })
+//     .catch(onFetchError)
+//     .finally(() => {
+//       hideElement(loader);
+//       hideElement(error);
+//       hideElement(divCatInfo);
+//     });
+// }

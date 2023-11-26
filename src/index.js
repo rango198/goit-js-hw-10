@@ -47,7 +47,7 @@ function onSelectBreed(event) {
   fetchCatByBreed(breedId)
     .then(data => {
       const { url, breeds } = data[0];
-      divCatInfo.innerHTML = `<div class="box-img"><img src="${url}" alt="${breeds[0].name}" width="400"/></div><div class="box"><h1>${breeds[0].name}</h1><p>${breeds[0].description}</p><p><b>Temperament:</b> ${breeds[0].temperament}</p></div>`;
+      divCatInfo.innerHTML = createCatInfoHTML(url, breeds[0]);
     })
     .catch(onFetchError)
     .finally(() => {
@@ -70,4 +70,8 @@ function onFetchError(error) {
       fontSize: '24px',
     }
   );
+}
+
+function createCatInfoHTML(url, breed) {
+  return `<div class="box-img"><img src="${url}" alt="${breed.name}" width="400"/></div><div class="box"><h1>${breed.name}</h1><p>${breed.description}</p><p><b>Temperament:</b> ${breed.temperament}</p></div>`;
 }
